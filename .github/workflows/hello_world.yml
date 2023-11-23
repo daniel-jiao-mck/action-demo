@@ -20,7 +20,7 @@ jobs:
         steps:
             - uses: actions/checkout@v4
             - name: print title
-              run: echo ${{ input.title }}
+              run: echo ${{ inputs.title }}
             - name: Setup Go version
               uses: actions/setup-go@v4
               with:
