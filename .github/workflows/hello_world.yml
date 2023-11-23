@@ -9,14 +9,21 @@ on:
         branches:
             - main
     workflow_dispatch:
+        inputs:
+            title:
+                description: 'Title name'
+                type: string
 
 jobs:
     build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v4
+            - name: print title
+              run: echo ${{ input.title }}
             - name: Setup Go version
               uses: actions/setup-go@v4
               with:
                 go-version: '1.21.4'
-            - run : go run helloworld.go
+            - name: execute
+              run : go run helloworld.go
