@@ -25,5 +25,7 @@ jobs:
               uses: actions/setup-go@v4
               with:
                 go-version: '1.21.4'
-            - name: execute
-              run : go run helloworld.go
+            - name: source build
+              run : go build helloworld.go
+            - name:  execute
+              run: ./helloworld
